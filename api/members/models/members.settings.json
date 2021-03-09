@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "name": "Members"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 120
+    },
+    "otherName": {
+      "type": "string",
+      "required": false,
+      "maxLength": 120
+    },
+    "organizations": {
+      "collection": "organization",
+      "via": "member"
+    }
+  }
+}
