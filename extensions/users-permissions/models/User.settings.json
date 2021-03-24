@@ -13,9 +13,7 @@
     "username": {
       "type": "string",
       "minLength": 3,
-      "unique": true,
-      "configurable": false,
-      "required": true
+      "configurable": false
     },
     "email": {
       "type": "email",
@@ -59,10 +57,13 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "domain": {
-      "type": "string",
-      "required": false,
-      "maxLength": 25
+    "organizerRequest": {
+      "type": "boolean",
+      "default": false
+    },
+    "members": {
+      "via": "users_permissions_user",
+      "collection": "members"
     }
   }
 }

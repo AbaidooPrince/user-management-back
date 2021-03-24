@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "name": "Groups",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "groupName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "branchId": {
+      "type": "string"
+    },
+    "organization": {
+      "via": "groups",
+      "model": "organization"
+    }
+  }
+}

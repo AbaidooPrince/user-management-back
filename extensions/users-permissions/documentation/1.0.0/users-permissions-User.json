@@ -1187,7 +1187,6 @@
       "UsersPermissionsUser": {
         "required": [
           "id",
-          "username",
           "email"
         ],
         "properties": {
@@ -1251,15 +1250,39 @@
               }
             }
           },
-          "domain": {
-            "type": "string",
-            "maxLength": 25
+          "organizerRequest": {
+            "type": "boolean",
+            "default": false
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "organization": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
       "NewUsersPermissionsUser": {
         "required": [
-          "username",
           "email"
         ],
         "properties": {
@@ -1296,9 +1319,15 @@
           "role": {
             "type": "string"
           },
-          "domain": {
-            "type": "string",
-            "maxLength": 25
+          "organizerRequest": {
+            "type": "boolean",
+            "default": false
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

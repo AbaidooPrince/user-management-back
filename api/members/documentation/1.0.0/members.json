@@ -516,92 +516,132 @@
     "schemas": {
       "Members": {
         "required": [
-          "id",
-          "firstName",
-          "lastName"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "firstName": {
-            "type": "string",
-            "maxLength": 50
-          },
-          "lastName": {
-            "type": "string",
-            "maxLength": 120
-          },
-          "otherName": {
-            "type": "string",
-            "maxLength": 120
-          },
-          "organizations": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "Name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Name": {
-                  "type": "string"
-                },
-                "Description": {
-                  "type": "string"
-                },
-                "groupUrl": {
-                  "type": "string"
-                },
-                "organizationId": {
-                  "type": "uid"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "member": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "organization": {
+            "required": [
+              "id",
+              "Name",
+              "organizationUrl",
+              "organizationSecret"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Name": {
+                "type": "string"
+              },
+              "Description": {
+                "type": "string"
+              },
+              "organizationUrl": {
+                "type": "string"
+              },
+              "organizationId": {
+                "type": "uid"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "organizationSecret": {
+                "type": "string"
+              },
+              "branches": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "organizerRequest": {
+                "type": "boolean"
+              },
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
         }
       },
       "NewMembers": {
-        "required": [
-          "firstName",
-          "lastName"
-        ],
         "properties": {
-          "firstName": {
-            "type": "string",
-            "maxLength": 50
+          "organization": {
+            "type": "string"
           },
-          "lastName": {
-            "type": "string",
-            "maxLength": 120
-          },
-          "otherName": {
-            "type": "string",
-            "maxLength": 120
-          },
-          "organizations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "users_permissions_user": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

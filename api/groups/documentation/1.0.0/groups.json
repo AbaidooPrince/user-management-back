@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/organizations": {
+    "/groups": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the groups's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve groups document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Organization"
+                    "$ref": "#/components/schemas/Groups"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Organization"
+          "Groups"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new groups record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve groups document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organization"
+                  "$ref": "#/components/schemas/Groups"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Organization"
+          "Groups"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrganization"
+                "$ref": "#/components/schemas/NewGroups"
               }
             }
           }
         }
       }
     },
-    "/organizations/count": {
+    "/groups/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of groups documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve groups document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Organization"
+          "Groups"
         ],
         "parameters": []
       }
     },
-    "/organizations/{id}": {
+    "/groups/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one groups record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve groups document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organization"
+                  "$ref": "#/components/schemas/Groups"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Organization"
+          "Groups"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single groups record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve groups document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organization"
+                  "$ref": "#/components/schemas/Groups"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Organization"
+          "Groups"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrganization"
+                "$ref": "#/components/schemas/NewGroups"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single groups record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single groups based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Organization"
+          "Groups"
         ],
         "parameters": [
           {
@@ -514,75 +514,70 @@
   },
   "components": {
     "schemas": {
-      "Organization": {
+      "Groups": {
         "required": [
           "id",
-          "Name",
-          "organizationUrl",
-          "organizationSecret"
+          "groupName"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Name": {
+          "groupName": {
             "type": "string"
           },
-          "Description": {
-            "type": "string",
-            "maxLength": 350
+          "branchId": {
+            "type": "string"
           },
-          "organizationUrl": {
-            "type": "string",
-            "maxLength": 25
-          },
-          "organizationId": {
-            "type": "uid"
-          },
-          "users_permissions_user": {
+          "organization": {
             "required": [
               "id",
-              "email"
+              "Name",
+              "organizationUrl",
+              "organizationSecret"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "Name": {
                 "type": "string"
               },
-              "email": {
+              "Description": {
                 "type": "string"
               },
-              "provider": {
+              "organizationUrl": {
                 "type": "string"
               },
-              "password": {
+              "organizationId": {
+                "type": "uid"
+              },
+              "users_permissions_user": {
                 "type": "string"
               },
-              "resetPasswordToken": {
+              "organizationSecret": {
                 "type": "string"
               },
-              "confirmationToken": {
-                "type": "string"
+              "branches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "organizerRequest": {
-                "type": "boolean"
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "members": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "published_at": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -592,115 +587,25 @@
               }
             }
           },
-          "groups": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "groupName"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "groupName": {
-                  "type": "string"
-                },
-                "branchId": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "members": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewOrganization": {
+      "NewGroups": {
         "required": [
-          "Name",
-          "organizationUrl",
-          "organizationSecret"
+          "groupName"
         ],
         "properties": {
-          "Name": {
+          "groupName": {
             "type": "string"
           },
-          "Description": {
-            "type": "string",
-            "maxLength": 350
-          },
-          "organizationUrl": {
-            "type": "string",
-            "maxLength": 25
-          },
-          "organizationId": {
-            "type": "uid"
-          },
-          "users_permissions_user": {
+          "branchId": {
             "type": "string"
           },
-          "organizationSecret": {
-            "type": "string",
-            "maxLength": 4,
-            "minLength": 4
-          },
-          "branches": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "members": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "organization": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -718,7 +623,7 @@
   },
   "tags": [
     {
-      "name": "Organization"
+      "name": "Groups"
     }
   ]
 }

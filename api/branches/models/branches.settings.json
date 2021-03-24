@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "branches",
+  "info": {
+    "name": "Branches"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "branchName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "organization": {
+      "via": "branches",
+      "model": "organization"
+    }
+  }
+}

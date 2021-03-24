@@ -20,20 +20,41 @@
       "type": "text",
       "maxLength": 350
     },
-    "groupUrl": {
+    "organizationUrl": {
       "type": "string",
-      "maxLength": 25
+      "maxLength": 25,
+      "required": true,
+      "unique": true
     },
     "organizationId": {
       "type": "uid"
     },
     "users_permissions_user": {
+      "columnName": "createdBy",
       "plugin": "users-permissions",
       "model": "user"
     },
-    "member": {
-      "via": "organizations",
-      "model": "members"
+    "organizationSecret": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "minLength": 4,
+      "maxLength": 4,
+      "unique": true,
+      "regex": "[A-Z]"
+    },
+    "branches": {
+      "private": true,
+      "collection": "branches",
+      "via": "organization"
+    },
+    "groups": {
+      "collection": "groups",
+      "via": "organization"
+    },
+    "members": {
+      "via": "organization",
+      "collection": "members"
     }
   }
 }
