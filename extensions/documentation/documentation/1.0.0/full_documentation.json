@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/22/2021 4:46:01 PM"
+    "x-generation-date": "03/28/2021 5:04:18 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4462,17 +4462,10 @@
           },
           "users_permissions_user": {
             "required": [
-              "id",
-              "email"
+              "id"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
                 "type": "string"
               },
               "provider": {
@@ -4494,6 +4487,12 @@
                 "type": "boolean"
               },
               "role": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
                 "type": "string"
               },
               "organizerRequest": {
@@ -4558,17 +4557,10 @@
           },
           "users_permissions_user": {
             "required": [
-              "id",
-              "email"
+              "id"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
                 "type": "string"
               },
               "provider": {
@@ -4590,6 +4582,12 @@
                 "type": "boolean"
               },
               "role": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
                 "type": "string"
               },
               "organizerRequest": {
@@ -4795,17 +4793,10 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "email"
+                "id"
               ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
                   "type": "string"
                 },
                 "provider": {
@@ -4827,6 +4818,12 @@
                   "type": "boolean"
                 },
                 "role": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
                   "type": "string"
                 },
                 "organizerRequest": {
@@ -4886,20 +4883,11 @@
       },
       "UsersPermissionsUser": {
         "required": [
-          "id",
-          "email"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
-          },
-          "username": {
-            "type": "string",
-            "minLength": 3
-          },
-          "email": {
-            "type": "string",
-            "minLength": 6
           },
           "provider": {
             "type": "string"
@@ -4950,6 +4938,14 @@
               }
             }
           },
+          "username": {
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "type": "string",
+            "minLength": 6
+          },
           "organizerRequest": {
             "type": "boolean",
             "default": false
@@ -4982,18 +4978,7 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": [
-          "email"
-        ],
         "properties": {
-          "username": {
-            "type": "string",
-            "minLength": 3
-          },
-          "email": {
-            "type": "string",
-            "minLength": 6
-          },
           "provider": {
             "type": "string"
           },
@@ -5018,6 +5003,14 @@
           },
           "role": {
             "type": "string"
+          },
+          "username": {
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "type": "string",
+            "minLength": 6
           },
           "organizerRequest": {
             "type": "boolean",

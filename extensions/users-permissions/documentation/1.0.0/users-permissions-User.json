@@ -1186,20 +1186,11 @@
     "schemas": {
       "UsersPermissionsUser": {
         "required": [
-          "id",
-          "email"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
-          },
-          "username": {
-            "type": "string",
-            "minLength": 3
-          },
-          "email": {
-            "type": "string",
-            "minLength": 6
           },
           "provider": {
             "type": "string"
@@ -1250,6 +1241,14 @@
               }
             }
           },
+          "username": {
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "type": "string",
+            "minLength": 6
+          },
           "organizerRequest": {
             "type": "boolean",
             "default": false
@@ -1282,18 +1281,7 @@
         }
       },
       "NewUsersPermissionsUser": {
-        "required": [
-          "email"
-        ],
         "properties": {
-          "username": {
-            "type": "string",
-            "minLength": 3
-          },
-          "email": {
-            "type": "string",
-            "minLength": 6
-          },
           "provider": {
             "type": "string"
           },
@@ -1318,6 +1306,14 @@
           },
           "role": {
             "type": "string"
+          },
+          "username": {
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "type": "string",
+            "minLength": 6
           },
           "organizerRequest": {
             "type": "boolean",

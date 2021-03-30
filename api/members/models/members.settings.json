@@ -16,9 +16,9 @@
       "via": "members"
     },
     "users_permissions_user": {
+      "via": "members",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "members"
+      "model": "user"
     }
   }
 }

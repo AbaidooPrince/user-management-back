@@ -10,17 +10,6 @@
     "timestamps": true
   },
   "attributes": {
-    "username": {
-      "type": "string",
-      "minLength": 3,
-      "configurable": false
-    },
-    "email": {
-      "type": "email",
-      "minLength": 6,
-      "configurable": false,
-      "required": true
-    },
     "provider": {
       "type": "string",
       "configurable": false
@@ -57,13 +46,22 @@
       "plugin": "users-permissions",
       "configurable": false
     },
+    "username": {
+      "type": "string",
+      "minLength": 3
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "required": false
+    },
     "organizerRequest": {
       "type": "boolean",
       "default": false
     },
     "members": {
-      "via": "users_permissions_user",
-      "collection": "members"
+      "collection": "members",
+      "via": "users_permissions_user"
     }
   }
 }

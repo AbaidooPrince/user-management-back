@@ -526,17 +526,10 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "email"
+                "id"
               ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
                   "type": "string"
                 },
                 "provider": {
@@ -558,6 +551,12 @@
                   "type": "boolean"
                 },
                 "role": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
                   "type": "string"
                 },
                 "organizerRequest": {
