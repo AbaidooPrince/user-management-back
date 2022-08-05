@@ -12,6 +12,7 @@
   },
   "attributes": {
     "organization": {
+      "private": true,
       "model": "organization",
       "via": "members"
     },

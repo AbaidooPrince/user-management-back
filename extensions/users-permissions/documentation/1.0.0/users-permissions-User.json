@@ -1186,7 +1186,9 @@
     "schemas": {
       "UsersPermissionsUser": {
         "required": [
-          "id"
+          "id",
+          "firstName",
+          "lastName"
         ],
         "properties": {
           "id": {
@@ -1277,10 +1279,20 @@
                 }
               }
             }
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
           }
         }
       },
       "NewUsersPermissionsUser": {
+        "required": [
+          "firstName",
+          "lastName"
+        ],
         "properties": {
           "provider": {
             "type": "string"
@@ -1324,6 +1336,12 @@
             "items": {
               "type": "string"
             }
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

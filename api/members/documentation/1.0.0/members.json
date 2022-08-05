@@ -522,67 +522,11 @@
           "id": {
             "type": "string"
           },
-          "organization": {
-            "required": [
-              "id",
-              "Name",
-              "organizationUrl",
-              "organizationSecret"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Name": {
-                "type": "string"
-              },
-              "Description": {
-                "type": "string"
-              },
-              "organizationUrl": {
-                "type": "string"
-              },
-              "organizationId": {
-                "type": "uid"
-              },
-              "users_permissions_user": {
-                "type": "string"
-              },
-              "organizationSecret": {
-                "type": "string"
-              },
-              "branches": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "groups": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "members": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "users_permissions_user": {
             "required": [
-              "id"
+              "id",
+              "firstName",
+              "lastName"
             ],
             "properties": {
               "id": {
@@ -623,6 +567,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"

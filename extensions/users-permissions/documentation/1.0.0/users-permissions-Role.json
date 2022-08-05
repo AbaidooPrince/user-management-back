@@ -526,7 +526,9 @@
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "firstName",
+                "lastName"
               ],
               "properties": {
                 "id": {
@@ -567,6 +569,12 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"

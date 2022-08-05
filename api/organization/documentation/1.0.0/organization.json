@@ -541,7 +541,9 @@
           },
           "users_permissions_user": {
             "required": [
-              "id"
+              "id",
+              "firstName",
+              "lastName"
             ],
             "properties": {
               "id": {
@@ -582,6 +584,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
